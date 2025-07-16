@@ -1,0 +1,16 @@
+﻿<Window x:Class="PlantillaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlantillaWPF"
+        xmlns:controls="clr-namespace:PlantillaWPF.Controls"
+        mc:Ignorable="d"
+        Title="Plantilla WPF" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+    <Viewbox x:Name="MainWindowVB" Stretch="Uniform">
+        <Grid Width="1080" Height="1920" Background="White">
+            <ContentControl x:Name="MainContent" Content="{Binding CurrentView}"/>
+            <controls:LoadingModal Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Grid>
+    </Viewbox>
+</Window>
